@@ -20,8 +20,7 @@ jobs:
           pip install requests
 
       - name: execute py script # run
-        run: |
-          cd ~/
+        run:
           python ${GITHUB_WORKSPACE}/yts_mx_api.py
         
       - name: execute py script # run
