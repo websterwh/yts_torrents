@@ -20,9 +20,7 @@ jobs:
           pip install requests
 
       - name: execute py script # run
-        env: 
         run: python yts_mx_api.py
         
       - name: execute py script # run
-        env: 
         run: python linkdownload.py
