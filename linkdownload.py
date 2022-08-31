@@ -70,7 +70,7 @@ for torrent_json_file in torrent_list:
         #EDIT: Format name to remove special characters to prevent name truncation.
         movie = movie.encode('utf-8').decode('utf-8').replace(':','').replace('?','').replace('/','-').replace('*','')
         
-#test
+        
         if web_2160 is not None:
             if (movie + 'web_2160p.torrent') in cache:
                 print("{} already downloaded".format(movie))
@@ -89,8 +89,7 @@ for torrent_json_file in torrent_list:
                 download_torrent(response.content, movie, 'bluray_2160p')
                 continue
     
-    
-        if bluray_1080 is not None:
+        elif bluray_1080 is not None:
             if (movie + 'bluray_1080p.torrent') in cache:
                 print("{} already downloaded".format(movie))
                 #EDIT: Already exists, don't waste time requesting info from server.
