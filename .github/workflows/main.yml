@@ -18,14 +18,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests
-
-      - name: current dir # run
-        run:
-          pwd
           
       - name: execute py script # run
         run:
-          python ${GITHUB_WORKSPACE}/yts_mx_api.py
+          python /home/runner/work/yts_torrents/yts_mx_api.py
         
       - name: execute py script # run
         run: python ./linkdownload.py
