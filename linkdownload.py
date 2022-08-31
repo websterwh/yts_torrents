@@ -71,7 +71,7 @@ for torrent_json_file in torrent_list:
         movie = movie.encode('utf-8').decode('utf-8').replace(':','').replace('?','').replace('/','-').replace('*','')
         
 #test
-        elif web_2160 is not None:
+        if web_2160 is not None:
             if (movie + 'web_2160p.torrent') in cache:
                 print("{} already downloaded".format(movie))
                 #EDIT: Already exists, don't waste time requesting info from server.
