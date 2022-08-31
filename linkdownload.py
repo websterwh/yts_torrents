@@ -69,6 +69,27 @@ for torrent_json_file in torrent_list:
         bluray_2160 = torrents.get('2160_bluray')
         #EDIT: Format name to remove special characters to prevent name truncation.
         movie = movie.encode('utf-8').decode('utf-8').replace(':','').replace('?','').replace('/','-').replace('*','')
+        
+#test
+        elif web_2160 is not None:
+            if (movie + 'web_2160p.torrent') in cache:
+                print("{} already downloaded".format(movie))
+                #EDIT: Already exists, don't waste time requesting info from server.
+            else:
+                response = requests_retry_session().get(web_2160, timeout=120)
+                download_torrent(response.content, movie, 'web_2160p')
+                continue
+            
+        elif bluray_2160 is not None:
+            if (movie + 'bluray_2160p.torrent') in cache:
+                print("{} already downloaded".format(movie))
+                #EDIT: Already exists, don't waste time requesting info from server.
+            else:
+                response = requests_retry_session().get(bluray_2160, timeout=120)
+                download_torrent(response.content, movie, 'bluray_2160p')
+                continue
+    
+    
         if bluray_1080 is not None:
             if (movie + 'bluray_1080p.torrent') in cache:
                 print("{} already downloaded".format(movie))
@@ -102,23 +123,5 @@ for torrent_json_file in torrent_list:
                 download_torrent(response.content, movie, 'web_720p')
                 continue
 
-#test
-        elif web_2160 is not None:
-            if (movie + 'web_2160p.torrent') in cache:
-                print("{} already downloaded".format(movie))
-                #EDIT: Already exists, don't waste time requesting info from server.
-            else:
-                response = requests_retry_session().get(web_2160, timeout=120)
-                download_torrent(response.content, movie, 'web_2160p')
-                continue
-            
-        elif bluray_2160 is not None:
-            if (movie + 'bluray_2160p.torrent') in cache:
-                print("{} already downloaded".format(movie))
-                #EDIT: Already exists, don't waste time requesting info from server.
-            else:
-                response = requests_retry_session().get(bluray_2160, timeout=120)
-                download_torrent(response.content, movie, 'bluray_2160p')
-                continue
         else:
             print('not any torrent')
