@@ -19,6 +19,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
+      - name: current dir # run
+        run:
+          pwd
+          
       - name: execute py script # run
         run:
           python ${GITHUB_WORKSPACE}/yts_mx_api.py
