@@ -22,7 +22,7 @@ jobs:
       - name: execute py script # run
         run: |
           cd ~/
-          python /usr/bin/yts_mx_api.py
+          python ${GITHUB_WORKSPACE}/yts_mx_api.py
         
       - name: execute py script # run
         run: python ./linkdownload.py
