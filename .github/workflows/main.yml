@@ -21,7 +21,7 @@ jobs:
           
       - name: execute py script # run
         run:
-          python /home/runner/work/yts_torrents/yts_mx_api.py
+          python /home/runner/work/yts_torrents/yts_torrents/yts_mx_api.py
         
       - name: execute py script # run
         run: python ./linkdownload.py
