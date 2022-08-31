@@ -20,7 +20,7 @@ jobs:
           pip install requests
 
       - name: execute py script # run
-        run: python yts_mx_api.py
+        run: python ./yts_mx_api.py
         
       - name: execute py script # run
-        run: python linkdownload.py
+        run: python ./linkdownload.py
