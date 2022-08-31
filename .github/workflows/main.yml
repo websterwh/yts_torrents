@@ -21,8 +21,8 @@ jobs:
 
       - name: execute py script # run
         run: cd ..
-        run: ls
-        run: python ./yts_mx_api.py
+          ls
+          python ./yts_mx_api.py
         
       - name: execute py script # run
         run: python ./linkdownload.py
