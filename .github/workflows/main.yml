@@ -20,7 +20,8 @@ jobs:
           pip install requests
 
       - name: execute py script # run
-        run: cd ~/
+        run: |
+          cd ~/
           ls
           python ./yts_mx_api.py
         
