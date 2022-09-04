@@ -21,7 +21,6 @@ jobs:
           
       - name: check dir
         run: |
-          pwd
           ls
           
       - name: execute py script # run
