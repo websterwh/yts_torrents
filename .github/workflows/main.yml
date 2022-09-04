@@ -20,11 +20,13 @@ jobs:
           pip install requests
           
       - name: check dir
-        run: pwd
+        run: |
+          pwd
+          ls
           
       - name: execute py script # run
         run:
-          python ./yts_mx_api.py
+          python yts_mx_api.py
         
       - name: execute py script # run
         run: python ./linkdownload.py
