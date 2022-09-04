@@ -19,6 +19,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
           
+        - name: check dir
+          run: pwd
+          
       - name: execute py script # run
         run:
           python ./yts_mx_api.py
